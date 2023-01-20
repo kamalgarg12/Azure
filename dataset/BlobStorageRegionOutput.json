@@ -1,0 +1,38 @@
+{
+	"name": "BlobStorageRegionOutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "RegionOutput.csv",
+				"container": "myblob1"
+			},
+			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "R_REGIONKEY",
+				"type": "String"
+			},
+			{
+				"name": "R_NAME",
+				"type": "String"
+			},
+			{
+				"name": "R_COMMENT",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

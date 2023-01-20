@@ -1,0 +1,36 @@
+{
+	"name": "SnowflakeInputRegion",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Snowflake1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeTable",
+		"schema": [
+			{
+				"name": "R_REGIONKEY",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "R_NAME",
+				"type": "VARCHAR",
+				"precision": 25,
+				"scale": 0
+			},
+			{
+				"name": "R_COMMENT",
+				"type": "VARCHAR",
+				"precision": 152,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "TPCH_SF1000",
+			"table": "REGION"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

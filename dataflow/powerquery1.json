@@ -1,0 +1,20 @@
+{
+	"name": "powerquery1",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "BlobStorageRegionOutput",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> BlobStorageRegionOutput",
+					"dataset": {
+						"referenceName": "BlobStorageRegionOutput",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared BlobStorageRegionOutput = let AdfDoc = AzureStorage.BlobContents(\"https://mystrgkamal.blob.core.windows.net/myblob1/RegionOutput.csv\"),Csv = Csv.Document(AdfDoc, [Delimiter = \",\", Encoding = TextEncoding.Utf8, QuoteStyle = QuoteStyle.Csv]), PromotedHeaders = Table.PromoteHeaders(Csv, [PromoteAllScalars = true]) in  PromotedHeaders;\r\nshared UserQuery = let Source = #\"BlobStorageRegionOutput\" in Source;\r\n",
+			"documentLocale": "en-us"
+		}
+	}
+}
