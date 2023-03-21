@@ -1,0 +1,9 @@
+{
+	"name": "ADF-kamal",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "42b1c557-05d3-496e-9c1b-17ba7c2793b8",
+		"tenantId": "27282fdd-4c0b-4dfb-ba91-228cd83fdf71"
+	}
+}
